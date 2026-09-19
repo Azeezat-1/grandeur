@@ -1,5 +1,6 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faArrowRight,
@@ -21,8 +22,15 @@ function onImgError(e) {
   if (e.currentTarget.src !== IMG_FALLBACK) e.currentTarget.src = IMG_FALLBACK
 }
 
-const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?q=80&w=2000&auto=format&fit=crop'
+const HERO_SLIDES = [
+  '/photos/agbada/468638126_18371867122115127_6050702171287759176_n.jpg',
+  '/photos/kaftan/469005918_18371848198115127_1840532585173048531_n.jpg',
+  '/photos/caps/512765680_574242359090242_3912759996769258010_n.jpg',
+  '/photos/kaftan/474179295_458659130648566_4987006008118321141_n.jpg',
+  '/photos/suit/466018795_18368563024115127_8237044931393756195_n.jpg',
+  '/photos/agbada/470230684_431702050010941_3961850809088119725_n.jpg',
+  '/photos/agbada/484303230_18386054032115127_1426785170446595455_n.jpg',
+]
 
 const STEPS = [
   { icon: faEye, title: '01 — Browse', text: 'Explore Grandeur’s collections.' },
@@ -31,12 +39,65 @@ const STEPS = [
   { icon: faStamp, title: '04 — Confirm', text: 'Receive confirmation of your order.' },
 ]
 
+const COLLECTION_CARDS = [
+  ...collections.map((c) => ({ ...c, to: `/shop?category=${c.slug}` })),
+  {
+    slug: 'all',
+    title: 'All Collections',
+    description: 'Every Grandeur piece, all in one place.',
+    image: '/photos/agbada/491417480_18391426582115127_6895553817828692143_n.jpg',
+    to: '/shop?category=all',
+  },
+]
+
 export default function Home() {
+  const prefersReduced = useReducedMotion()
+  const [slide, setSlide] = useState(0)
+  const [paused, setPaused] = useState(false)
+
+  useEffect(() => {
+    if (prefersReduced || paused) return undefined
+    const timer = setInterval(() => setSlide((s) => (s + 1) % HERO_SLIDES.length), 5500)
+    return () => clearInterval(timer)
+  }, [prefersReduced, paused])
+
+  const slideMotion = prefersReduced
+    ? {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        exit: { opacity: 0 },
+        transition: { duration: 0.4 },
+      }
+    : {
+        initial: { opacity: 0, x: '4%' },
+        animate: { opacity: 1, x: 0 },
+        exit: { opacity: 0, x: '-3%' },
+        transition: { duration: 1.1, ease: [0.22, 1, 0.36, 1] },
+      }
+
   return (
     <>
       {/* HERO */}
-      <section className="hero">
-        <img className="hero__bg" src={HERO_IMAGE} alt="" aria-hidden="true" onError={onImgError} />
+      <section
+        className="hero"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={slide}
+            className="hero__slide"
+            {...slideMotion}
+          >
+            <img
+              className={`hero__bg${slide % 2 === 1 ? ' hero__bg--alt' : ''}`}
+              src={HERO_SLIDES[slide]}
+              alt=""
+              aria-hidden="true"
+              onError={onImgError}
+            />
+          </motion.div>
+        </AnimatePresence>
         <div className="hero__overlay" />
         <div className="container hero__content">
           <motion.span
@@ -102,6 +163,19 @@ export default function Home() {
         <div className="hero__scroll" aria-hidden="true">
           <span />
         </div>
+        <div className="hero__dots" role="tablist" aria-label="Hero slides">
+          {HERO_SLIDES.map((src, i) => (
+            <button
+              key={src}
+              type="button"
+              role="tab"
+              className={`hero__dot${i === slide ? ' hero__dot--active' : ''}`}
+              aria-selected={i === slide}
+              aria-label={`Go to slide ${i + 1}`}
+              onClick={() => setSlide(i)}
+            />
+          ))}
+        </div>
       </section>
 
       {/* NATIVE WEAR FOCUS */}
@@ -111,13 +185,13 @@ export default function Home() {
             <Reveal className="native-focus__media">
               <div className="native-media__stack">
                 <img
-                  src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=1000&auto=format&fit=crop"
+                  src="/photos/kaftan/474179295_458659130648566_4987006008118321141_n.jpg"
                   alt="Crisp detailing on a Grandeur kaftan chest"
                   onError={onImgError}
                 />
                 <img
                   className="native-media__tall"
-                  src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=900&auto=format&fit=crop"
+                  src="/photos/agbada/488609268_18390734812115127_3730262705908840077_n.jpg"
                   alt="Structured embroidery on a premium kaftan"
                   onError={onImgError}
                 />
@@ -142,8 +216,8 @@ export default function Home() {
               </Reveal>
               <Reveal delay={0.18}>
                 <div className="native-focus__actions">
-                  <Link to="/shop?category=native-wear" className="btn btn--solid">
-                    Explore Native Wear <FontAwesomeIcon icon={faArrowRight} />
+                  <Link to="/shop?category=kaftans" className="btn btn--solid">
+                    Explore Kaftans &amp; Agbada <FontAwesomeIcon icon={faArrowRight} />
                   </Link>
                 </div>
               </Reveal>
@@ -175,8 +249,8 @@ export default function Home() {
           </Reveal>
           <Reveal className="about__media" delay={0.1}>
             <img
-              src="https://images.unsplash.com/photo-1558769132-94e457f0e3af?q=80&w=1200&auto=format&fit=crop"
-              alt="Clothing laid out in a premium fashion studio"
+              src="/photos/agbada/472231890_445906608590485_8925906217239826626_n.jpg"
+              alt="A Grandeur agbada piece finished in the studio"
               onError={onImgError}
             />
           </Reveal>
@@ -196,32 +270,38 @@ export default function Home() {
             </Link>
           </Reveal>
 
-          <div className="collections-grid collections-grid--emphasized">
-            {collections.map((c, i) => {
-              const emphasized = c.slug === 'native-wear'
-              return (
-                <Link
-                  to={`/shop?category=${c.slug}`}
-                  className={`collection-card ${emphasized ? 'collection-card--feature' : ''}`}
-                  key={c.slug}
-                >
-                  <Reveal delay={i * 0.06}>
+          <div className="collections-strip">
+            <div className="collections-strip__track">
+              {[...COLLECTION_CARDS, ...COLLECTION_CARDS].map((c, i) => {
+                const clone = i >= COLLECTION_CARDS.length
+                return (
+                  <Link
+                    to={c.to}
+                    className="collection-card collection-card--slide"
+                    key={`${c.slug}-${i}`}
+                    aria-hidden={clone}
+                    tabIndex={clone ? -1 : 0}
+                  >
                     <div className="collection-card__media">
                       <img src={c.image} alt={`${c.title} collection`} loading="lazy" onError={onImgError} />
                       <div className="collection-card__overlay" />
                       <div className="collection-card__meta">
-                        <span className="collection-card__num">{String(i + 1).padStart(2, '0')}</span>
+                        <span className="collection-card__num">
+                          {String((i % COLLECTION_CARDS.length) + 1).padStart(2, '0')}
+                        </span>
                         <div>
                           <h3>{c.title}</h3>
                           <p>{c.description}</p>
-                          <span className="collection-card__cta">Explore <FontAwesomeIcon icon={faArrowRight} /></span>
+                          <span className="collection-card__cta">
+                            Explore <FontAwesomeIcon icon={faArrowRight} />
+                          </span>
                         </div>
                       </div>
                     </div>
-                  </Reveal>
-                </Link>
-              )
-            })}
+                  </Link>
+                )
+              })}
+            </div>
           </div>
         </div>
       </section>

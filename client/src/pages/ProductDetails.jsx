@@ -58,7 +58,7 @@ export default function ProductDetails() {
     )
   }
 
-  const isNative = product.category === 'native-wear'
+  const isNative = product.category === 'kaftans' || product.category === 'agbada'
   const related = products.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 4)
 
   const changeQty = (delta) => {

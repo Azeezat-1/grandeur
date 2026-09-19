@@ -7,7 +7,14 @@ import ProductCard from '../components/ProductCard'
 import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 
-const HERO = 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2000&auto=format&fit=crop'
+const HERO_IMAGES = [
+  '/photos/shop/470144664_430396553474824_3054171908720115215_n.jpg',
+  '/photos/agbada/468638126_18371867122115127_6050702171287759176_n.jpg',
+  '/photos/kaftan/469005918_18371848198115127_1840532585173048531_n.jpg',
+  '/photos/suit/466018795_18368563024115127_8237044931393756195_n.jpg',
+  '/photos/caps/512765680_574242359090242_3912759996769258010_n.jpg',
+  '/photos/agbada/470230684_431702050010941_3961850809088119725_n.jpg',
+]
 
 const SORT_OPTIONS = [
   { value: 'featured', label: 'Featured' },
@@ -64,7 +71,7 @@ export default function Shop() {
         eyebrow="The Shop"
         title="Grandeur Collections"
         lead="Browse bespoke pieces built for confidence. Native wear, suiting and everyday luxury."
-        image={HERO}
+        images={HERO_IMAGES}
       />
 
       <section className="section shop">

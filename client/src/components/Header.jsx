@@ -28,8 +28,8 @@ export default function Header() {
         <div className="container header-inner">
           {/* LEFT — brand */}
           <div className="header-left">
-            <Link to="/" className="brand" aria-label="Grandeur — home">
-              GRANDEUR
+            <Link to="/" className="brand" aria-label="Grandeur Tailors — home">
+              <img src="/logo.png" alt="Grandeur Tailors" className="brand-logo" />
             </Link>
           </div>
 

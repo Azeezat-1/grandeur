@@ -15,8 +15,7 @@ import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 import { IMG_FALLBACK } from '../lib/images'
 
-const HERO =
-  'https://images.unsplash.com/photo-1558769132-94e457f0e3af?q=80&w=2000&auto=format&fit=crop'
+const HERO = '/photos/agbada/484303230_18386054032115127_1426785170446595455_n.jpg'
 
 function onImgError(e) {
   if (e.currentTarget.src !== IMG_FALLBACK) e.currentTarget.src = IMG_FALLBACK
@@ -74,8 +73,8 @@ export default function Training() {
         <div className="container academy__grid">
           <Reveal>
             <img
-              src="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?q=80&w=1200&auto=format&fit=crop"
-              alt="A tailor working at a sewing machine in a studio"
+              src="/photos/agbada/468638126_18371867122115127_6050702171287759176_n.jpg"
+              alt="A Grandeur piece finished in the atelier"
               onError={onImgError}
             />
           </Reveal>

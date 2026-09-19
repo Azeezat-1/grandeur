@@ -13,7 +13,7 @@ import { getProductById, formatPrice } from '../data/products'
 import PageHero from '../components/PageHero'
 import { IMG_FALLBACK } from '../lib/images'
 
-const HERO = 'https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=2000&auto=format&fit=crop'
+const HERO = '/photos/agbada/491417480_18391426582115127_6895553817828692143_n.jpg'
 
 function onImgError(e) {
   if (e.currentTarget.src !== IMG_FALLBACK) e.currentTarget.src = IMG_FALLBACK

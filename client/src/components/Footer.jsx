@@ -57,12 +57,10 @@ export default function Footer() {
         <div className="footer-col">
           <p className="footer-heading">Collections</p>
           <ul>
-            <li><Link to="/shop?category=native-wear">Native Wear</Link></li>
+            <li><Link to="/shop?category=kaftans">Kaftans</Link></li>
+            <li><Link to="/shop?category=agbada">Agbada</Link></li>
             <li><Link to="/shop?category=suits">Suits</Link></li>
-            <li><Link to="/shop?category=shirts">Shirts</Link></li>
-            <li><Link to="/shop?category=trousers">Trousers</Link></li>
-            <li><Link to="/shop?category=shoes">Shoes</Link></li>
-            <li><Link to="/shop?category=casual-wear">Casual Wear</Link></li>
+            <li><Link to="/shop?category=caps">Caps</Link></li>
           </ul>
         </div>
 

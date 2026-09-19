@@ -4,14 +4,14 @@ import { faEye, faShirt, faCube, faStamp, faArrowRight, faMessage } from '@forta
 import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 
-const HERO = 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=2000&auto=format&fit=crop'
+const HERO = '/photos/agbada/498134117_18395966638115127_5672086864893682746_n.jpg'
 
 const STEPS = [
   {
     icon: faEye,
     num: '01',
     title: 'Browse',
-    text: 'Explore Grandeur’s collections — native wear, kaftan + agbada sets, suits, shirts, trousers and casual pieces.',
+    text: 'Explore Grandeur’s collections — kaftans, agbada sets, suits and caps.',
     to: '/shop',
     cta: 'Browse the shop',
   },

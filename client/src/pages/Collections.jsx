@@ -6,7 +6,7 @@ import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 import { IMG_FALLBACK } from '../lib/images'
 
-const HERO = 'https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=2000&auto=format&fit=crop'
+const HERO = '/photos/kaftan/469005918_18371848198115127_1840532585173048531_n.jpg'
 
 function onImgError(e) {
   if (e.currentTarget.src !== IMG_FALLBACK) e.currentTarget.src = IMG_FALLBACK
@@ -17,8 +17,8 @@ export default function Collections() {
     <>
       <PageHero
         eyebrow="Collections"
-        title="Six ways to wear confidence."
-        lead="From ceremony native wear to tailored suiting, every Grandeur collection is built to detail."
+        title="Every Grandeur collection, in one place."
+        lead="From ceremony native wear to tailored suiting and finished caps, every Grandeur collection is built to detail."
         image={HERO}
       />
 
@@ -28,7 +28,7 @@ export default function Collections() {
             <Reveal key={c.slug} delay={(i % 3) * 0.06}>
               <Link
                 to={`/shop?category=${c.slug}`}
-                className={`collection-card collection-card--page ${c.slug === 'native-wear' ? 'collection-card--feature' : ''}`}
+                className="collection-card collection-card--page"
               >
                 <div className="collection-card__media">
                   <img src={c.image} alt={`${c.title} collection`} loading="lazy" onError={onImgError} />

@@ -12,7 +12,7 @@ import { faInstagram, faFacebookF, faXTwitter, faWhatsapp, faTiktok } from '@for
 import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 
-const HERO = 'https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?q=80&w=2000&auto=format&fit=crop'
+const HERO = '/photos/caps/513079191_574242352423576_1914461248101949094_n.jpg'
 
 const CONTACT_PLACEHOLDERS = [
   { icon: faPhone, label: 'Phone / WhatsApp', value: '+234 800 000 0000' },

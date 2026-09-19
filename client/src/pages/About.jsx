@@ -5,7 +5,7 @@ import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 import { IMG_FALLBACK } from '../lib/images'
 
-const HERO = 'https://images.unsplash.com/photo-1558769132-94e457f0e3af?q=80&w=2000&auto=format&fit=crop'
+const HERO = '/photos/kaftan/474179295_458659130648566_4987006008118321141_n.jpg'
 
 function onImgError(e) {
   if (e.currentTarget.src !== IMG_FALLBACK) e.currentTarget.src = IMG_FALLBACK
@@ -48,8 +48,7 @@ export default function About() {
             </h2>
             <p>
               Grandeur exists for the man who understands that how he dresses precedes him. We
-              specialise in men&apos;s fashion — kaftans, agbada, native wear, suits, shirts and
-              casual pieces — made with the kind of attention that turns clothing into presence.
+              specialise in men&apos;s fashion — kaftans, agbada, native wear, suits and caps — made with the kind of attention that turns clothing into presence.
             </p>
             <p>
               Our atelier pairs traditional Nigerian craftsmanship with clean modern tailoring.
@@ -66,13 +65,13 @@ export default function About() {
           </Reveal>
           <Reveal className="about__media about__media--stack" delay={0.1}>
             <img
-              src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=1000&auto=format&fit=crop"
-              alt="Structured tailoring detail on a garment"
+              src="/photos/agbada/488609268_18390734812115127_3730262705908840077_n.jpg"
+              alt="Structured tailoring detail on a Grandeur kaftan"
               onError={onImgError}
             />
             <img
-              src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop"
-              alt="Premium clothing displayed in a studio"
+              src="/photos/agbada/557358807_18415228465115127_2700883447488426798_n.jpg"
+              alt="Premium pieces from the Grandeur atelier"
               onError={onImgError}
             />
           </Reveal>

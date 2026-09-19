@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
 
 /* ============================================================
    GRANDEUR — DESIGN SYSTEM
@@ -16,13 +16,16 @@
   --g-sand: #b7a78a;
   --g-brown: #5c4a36;
   --g-brown-dark: #3e3325;
-  --g-gold: #b08d57;
-  --g-gold-dark: #97763f;
+  --g-gold: #7c85a8;
+  --g-gold-dark: #3f4668;
+  --g-periwinkle: #aeb9d4;
+  --g-indigo: #2e3350;
+  --g-maroon: #3c2325;
   --g-line: rgba(15, 14, 12, 0.12);
   --g-line-light: rgba(244, 241, 234, 0.14);
 
   /* Typography */
-  --font-heading: 'Space Grotesk', sans-serif;
+  --font-heading: 'Roboto', sans-serif;
   --font-body: 'Roboto', sans-serif;
 
   /* Layout */
