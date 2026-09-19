@@ -9,10 +9,18 @@ import { notFound, errorHandler } from './middleware/error.js'
 export function createApp() {
   const app = express()
 
+  const allowedOrigins = process.env.CORS_ORIGINS
+    ? process.env.CORS_ORIGINS.split(',')
+        .map((s) => s.trim())
+        .filter(Boolean)
+    : null
+
   app.use(
-    cors({
-      origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173',
-    }),
+    cors(
+      allowedOrigins && allowedOrigins.length > 0
+        ? { origin: allowedOrigins }
+        : {},
+    ),
   )
   app.use(express.json({ limit: '1mb' }))
 
