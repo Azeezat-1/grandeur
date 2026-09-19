@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -10,8 +10,10 @@ import {
   faShirt,
   faLayerGroup,
   faBox,
+  faRotateRight,
 } from '@fortawesome/free-solid-svg-icons'
-import { getProductById, products, formatPrice } from '../data/products'
+import { formatPrice } from '../data/products'
+import { useProducts } from '../context/ProductContext'
 import { useCart } from '../context/CartContext'
 import { IMG_FALLBACK } from '../lib/images'
 import Reveal from '../components/Reveal'
@@ -35,11 +37,47 @@ export default function ProductDetails() {
   const { id } = useParams()
   const navigate = useNavigate()
   const { addItem } = useCart()
+  const { products, loading, error, refresh, getProductById } = useProducts()
 
   const product = getProductById(id)
-  const [size, setSize] = useState(product?.sizes?.[0] || '')
-  const [color, setColor] = useState(product?.colors?.[0] || '')
+  const [size, setSize] = useState('')
+  const [color, setColor] = useState('')
   const [qty, setQty] = useState(1)
+
+  useEffect(() => {
+    setSize(product?.sizes?.[0] || '')
+    setColor(product?.colors?.[0] || '')
+    setQty(1)
+  }, [product?.id, product?.sizes, product?.colors])
+
+  if (loading) {
+    return (
+      <section className="section">
+        <div className="container">
+          <div className="empty-state" aria-busy="true">
+            <h3>Loading this piece…</h3>
+            <p>Please give us a moment.</p>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  if (error) {
+    return (
+      <section className="section">
+        <div className="container">
+          <div className="empty-state" role="alert">
+            <h3>We couldn&apos;t load this piece.</h3>
+            <p>{error}</p>
+            <button className="btn btn--outline" onClick={refresh}>
+              <FontAwesomeIcon icon={faRotateRight} /> Try again
+            </button>
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   if (!product) {
     return (

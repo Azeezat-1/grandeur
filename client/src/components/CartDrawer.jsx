@@ -3,7 +3,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark, faPlus, faMinus, faTrashCan, faBasketShopping } from '@fortawesome/free-solid-svg-icons'
 import { useCart } from '../context/CartContext'
-import { getProductById, formatPrice } from '../data/products'
+import { useProducts } from '../context/ProductContext'
+import { formatPrice } from '../data/products'
 import { IMG_FALLBACK } from '../lib/images'
 
 function onImgError(e) {
@@ -12,6 +13,7 @@ function onImgError(e) {
 
 export default function CartDrawer() {
   const { isOpen, setIsOpen, items, count, subtotal, increaseQty, decreaseQty, removeItem } = useCart()
+  const { getProductById } = useProducts()
 
   return (
     <AnimatePresence>

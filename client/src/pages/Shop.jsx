@@ -1,8 +1,9 @@
 import { useMemo, useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass, faArrowDownShortWide, faArrowUpWideShort } from '@fortawesome/free-solid-svg-icons'
-import { products, categories } from '../data/products'
+import { faMagnifyingGlass, faArrowDownShortWide, faArrowUpWideShort, faRotateRight } from '@fortawesome/free-solid-svg-icons'
+import { categories } from '../data/products'
+import { useProducts } from '../context/ProductContext'
 import ProductCard from '../components/ProductCard'
 import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
@@ -28,6 +29,7 @@ export default function Shop() {
   const activeCategory = params.get('category') || 'all'
   const [search, setSearch] = useState('')
   const [sort, setSort] = useState('featured')
+  const { products, loading, error, refresh } = useProducts()
 
   useEffect(() => {
     if (!params.get('category')) setParams({ category: 'all' }, { replace: true })
@@ -59,7 +61,7 @@ export default function Shop() {
         list.sort((a, b) => Number(b.featured) - Number(a.featured))
     }
     return list
-  }, [activeCategory, search, sort])
+  }, [products, activeCategory, search, sort])
 
   const selectCategory = (slug) => {
     setParams({ category: slug })
@@ -119,7 +121,20 @@ export default function Shop() {
             {shown.length} piece{shown.length === 1 ? '' : 's'} {activeCategory !== 'all' ? `in ${activeCategory.replace('-', ' ')}` : ''}
           </p>
 
-          {shown.length === 0 ? (
+          {loading ? (
+            <div className="empty-state" aria-busy="true">
+              <h3>Loading the collection…</h3>
+              <p>Please give us a moment.</p>
+            </div>
+          ) : error ? (
+            <div className="empty-state" role="alert">
+              <h3>We couldn&apos;t load the shop right now.</h3>
+              <p>{error}</p>
+              <button className="btn btn--outline" onClick={refresh}>
+                <FontAwesomeIcon icon={faRotateRight} /> Try again
+              </button>
+            </div>
+          ) : shown.length === 0 ? (
             <div className="empty-state">
               <FontAwesomeIcon icon={faMagnifyingGlass} />
               <h3>No pieces match your search.</h3>

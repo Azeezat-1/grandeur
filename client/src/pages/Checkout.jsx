@@ -3,7 +3,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowRight, faSpinner, faShieldHalved } from '@fortawesome/free-solid-svg-icons'
 import { useCart } from '../context/CartContext'
-import { getProductById, formatPrice } from '../data/products'
+import { useProducts } from '../context/ProductContext'
+import { formatPrice } from '../data/products'
 import { IMG_FALLBACK } from '../lib/images'
 import api from '../lib/api'
 
@@ -23,6 +24,7 @@ const initialState = {
 
 export default function Checkout() {
   const { items, subtotal, clearCart } = useCart()
+  const { getProductById } = useProducts()
   const navigate = useNavigate()
 
   const [form, setForm] = useState(initialState)
@@ -40,7 +42,7 @@ export default function Checkout() {
     const er = {}
     if (!form.fullName.trim()) er.fullName = 'Full name is required'
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) er.email = 'A valid email is required'
-    if (!/^[0-9+()\s-]{7,15}$/.test(form.phone)) er.phone = 'A valid phone number is required'
+    if (!/^[0-9+()\s-]{7,20}$/.test(form.phone)) er.phone = 'A valid phone number is required'
     if (!form.address.trim()) er.address = 'Delivery address is required'
     if (!form.city.trim()) er.city = 'City is required'
     if (!form.state.trim()) er.state = 'State is required'

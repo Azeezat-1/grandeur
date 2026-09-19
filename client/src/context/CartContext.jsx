@@ -1,40 +1,53 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
-import { getProductById } from '../data/products'
+import { useProducts } from './ProductContext'
 
 const CartContext = createContext(null)
 
 const STORAGE_KEY = 'grandeur-cart'
 
-function loadCart() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY)
-    const parsed = raw ? JSON.parse(raw) : []
-    if (!Array.isArray(parsed)) return []
-    return parsed.filter((i) => i && getProductById(i.id)).map((i) => {
-      const p = getProductById(i.id)
-      return {
-        id: p.id,
-        qty: Math.max(1, Number(i.qty) || 1),
-        size: i.size || (p.sizes && p.sizes[0]) || 'One Size',
-        color: i.color || (p.colors && p.colors[0]) || 'Standard',
-      }
-    })
-  } catch {
-    return []
+function normalizeItem(item, product) {
+  return {
+    id: product.id,
+    qty: Math.max(1, Number(item.qty) || 1),
+    size: item.size || (product.sizes && product.sizes[0]) || 'One Size',
+    color: item.color || (product.colors && product.colors[0]) || 'Standard',
   }
 }
 
 export function CartProvider({ children }) {
-  const [items, setItems] = useState(loadCart)
+  const { loading: productsLoading, getProductById } = useProducts()
+  const [items, setItems] = useState([])
+  const [hydrated, setHydrated] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
+    if (productsLoading) return
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY)
+      const parsed = raw ? JSON.parse(raw) : []
+      if (!Array.isArray(parsed)) {
+        setItems([])
+        return
+      }
+      const list = parsed
+        .filter((i) => i && getProductById(i.id))
+        .map((i) => normalizeItem(i, getProductById(i.id)))
+      setItems(list)
+    } catch {
+      setItems([])
+    } finally {
+      setHydrated(true)
+    }
+  }, [productsLoading, getProductById])
+
+  useEffect(() => {
+    if (!hydrated) return
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(items))
     } catch {
       /* storage unavailable — cart stays in memory */
     }
-  }, [items])
+  }, [items, hydrated])
 
   const addItem = (id, { size, color, qty = 1 } = {}) => {
     const product = getProductById(id)
@@ -84,7 +97,7 @@ export function CartProvider({ children }) {
 
   const subtotal = useMemo(
     () => items.reduce((sum, i) => sum + getProductById(i.id)?.price * i.qty, 0),
-    [items],
+    [items, getProductById],
   )
 
   const value = {

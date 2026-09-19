@@ -9,7 +9,8 @@ import {
   faArrowLeft,
 } from '@fortawesome/free-solid-svg-icons'
 import { useCart } from '../context/CartContext'
-import { getProductById, formatPrice } from '../data/products'
+import { useProducts } from '../context/ProductContext'
+import { formatPrice } from '../data/products'
 import PageHero from '../components/PageHero'
 import { IMG_FALLBACK } from '../lib/images'
 
@@ -21,6 +22,7 @@ function onImgError(e) {
 
 export default function Cart() {
   const { items, count, subtotal, increaseQty, decreaseQty, removeItem, clearCart } = useCart()
+  const { getProductById } = useProducts()
 
   return (
     <>
