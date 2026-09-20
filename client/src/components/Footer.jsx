@@ -84,7 +84,7 @@ export default function Footer() {
       </div>
 
       <div className="container footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Grandeur. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Azeezat Yusuf. All rights reserved.</p>
         <p>Bespoke Men&apos;s Fashion &amp; Tailoring</p>
       </div>
     </footer>
