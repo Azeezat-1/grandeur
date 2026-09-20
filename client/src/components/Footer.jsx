@@ -85,7 +85,7 @@ export default function Footer() {
 
       <div className="container footer-bottom">
         <p>&copy; {new Date().getFullYear()} Azeezat Yusuf. All rights reserved.</p>
-        <p>Bespoke Men&apos;s Fashion &amp; Tailoring</p>
+        <p>Website by Azeezat Yusuf</p>
       </div>
     </footer>
   )
