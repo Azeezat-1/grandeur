@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 /* ============================================================
    GRANDEUR — DESIGN SYSTEM
@@ -25,8 +25,8 @@
   --g-line-light: rgba(244, 241, 234, 0.14);
 
   /* Typography */
-  --font-heading: 'Roboto', sans-serif;
-  --font-body: 'Roboto', sans-serif;
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Lora', Georgia, 'Times New Roman', serif;
 
   /* Layout */
   --gutter: clamp(1.25rem, 4vw, 4.5rem);
