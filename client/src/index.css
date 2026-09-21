@@ -162,19 +162,8 @@ h5 {
   color: var(--g-gold-dark);
 }
 
-.eyebrow::before {
-  content: '';
-  width: 34px;
-  height: 1px;
-  background: var(--g-gold);
-}
-
 .eyebrow--light {
   color: var(--g-beige);
-}
-
-.eyebrow--light::before {
-  background: var(--g-beige);
 }
 
 .section {
