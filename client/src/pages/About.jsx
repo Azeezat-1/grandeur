@@ -35,7 +35,7 @@ export default function About() {
       <PageHero
         eyebrow="About"
         title="A fashion house built on craft."
-        lead="Grandeur is bespoke men's fashion — Nigerian native wear, suiting and tailoring, taught and tailored with intention."
+        lead="Grandeur is bespoke men's fashion, Nigerian native wear, suiting and tailoring, taught and tailored with intention."
         image={HERO}
       />
 
@@ -48,7 +48,7 @@ export default function About() {
             </h2>
             <p>
               Grandeur exists for the man who understands that how he dresses precedes him. We
-              specialise in men&apos;s fashion — kaftans, agbada, native wear, suits and caps — made with the kind of attention that turns clothing into presence.
+              specialise in men&apos;s fashion, kaftans, agbada, native wear, suits and caps, made with the kind of attention that turns clothing into presence.
             </p>
             <p>
               Our atelier pairs traditional Nigerian craftsmanship with clean modern tailoring.

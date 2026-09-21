@@ -70,7 +70,7 @@ export default function Contact() {
       <PageHero
         eyebrow="Contact"
         title="Let's talk."
-        lead="Orders, bespoke requests, training applications or a general question — reach out and we'll respond promptly."
+        lead="Orders, bespoke requests, training applications or a general question, reach out and we'll respond promptly."
         image={HERO}
       />
 
@@ -79,7 +79,7 @@ export default function Contact() {
           <Reveal className="contact__info">
             <h2>Get in touch</h2>
             <p>
-              These details are placeholders — swap in the real Grandeur contact information here.
+              These details are placeholders, swap in the real Grandeur contact information here.
             </p>
             <ul className="contact__cards">
               {CONTACT_PLACEHOLDERS.map((c) => (
@@ -111,7 +111,7 @@ export default function Contact() {
           <Reveal className="contact__form-wrap" delay={0.1}>
             {sent && (
               <div className="alert alert--success">
-                <FontAwesomeIcon icon={faCheck} /> Thank you — your message has been received.
+                <FontAwesomeIcon icon={faCheck} /> Thank you, your message has been received.
               </div>
             )}
             <form className="contact__form" onSubmit={handleSubmit} noValidate>

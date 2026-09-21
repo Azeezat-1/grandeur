@@ -27,7 +27,7 @@ const MODULES = [
   { icon: faScissors, title: 'Sewing & Garment Construction', text: 'Machine work, construction order and building garments that hold their shape.' },
   { icon: faShirt, title: 'Fabric Knowledge', text: 'Understanding weave, weight, drape and how to choose the right cloth.' },
   { icon: faSuitcase, title: 'Men’s Tailoring', text: 'Suits, shirts and trousers cut and finished to a premium standard.' },
-  { icon: faLayerGroup, title: 'Kaftan & Agbada Construction', text: 'Structured kaftans and flowing agbada — Grandeur’s speciality craft.' },
+  { icon: faLayerGroup, title: 'Kaftan & Agbada Construction', text: 'Structured kaftans and flowing agbada, Grandeur’s speciality craft.' },
   { icon: faScrewdriverWrench, title: 'Finishing Techniques', text: 'Seams, cuffs, collars, buttons and the details buyers notice first.' },
   { icon: faUserGraduate, title: 'Professional Development', text: 'Styling, client work, pricing and running your own tailoring business.' },
 ]
@@ -38,7 +38,7 @@ export default function Training() {
       <PageHero
         eyebrow="Grandeur Academy"
         title="Hands-on tailoring training."
-        lead="Learn real construction — pattern making, sewing, men's tailoring, and dedicated kaftan and agbada craft — in a working fashion studio."
+        lead="Learn real construction, pattern making, sewing, men's tailoring, and dedicated kaftan and agbada craft, in a working fashion studio."
         image={HERO}
       />
 
@@ -50,7 +50,7 @@ export default function Training() {
               <h2 className="section-title">A complete foundation, taught by making.</h2>
             </div>
             <p className="section-lead">
-              Our training is hands-on. You work with fabric, machines and real projects — not just
+              Our training is hands-on. You work with fabric, machines and real projects, not just
               theory. By the end, you&apos;ll have constructed garments you can show clients.
             </p>
           </Reveal>
@@ -83,7 +83,7 @@ export default function Training() {
             <h2 className="section-title">Start your tailoring career with Grandeur.</h2>
             <p>
               Whether you&apos;re starting from zero or refining existing skills, the Grandeur
-              academy meets you where you are — with structured projects, mentorship and the
+              academy meets you where you are, with structured projects, mentorship and the
               standards of a real premium brand.
             </p>
             <ul className="feature-list feature-list--light">

@@ -8,7 +8,7 @@ export default function NotFound() {
       <div className="container">
         <div className="empty-state">
           <FontAwesomeIcon icon={faCompass} />
-          <h3>404 — Page not found</h3>
+          <h3>404 Page not found</h3>
           <p>The page you&apos;re looking for doesn&apos;t exist or has moved.</p>
           <Link to="/" className="btn btn--solid">
             Back to Home

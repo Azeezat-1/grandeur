@@ -144,13 +144,13 @@ const COLORS = {
 
 const DESCRIPTIONS = {
   kaftans:
-    'A refined Grandeur kaftan — clean shoulders, a sharp collar and hand-finished embroidery. Made to measure for a confident, elegant silhouette.',
+    'A refined Grandeur kaftan with clean shoulders, a sharp collar and hand-finished embroidery. Made to measure for a confident, elegant silhouette.',
   agbada:
     'A complete kaftan + agbada set with an inner kaftan, flowing embroidered outer cape and matching trousers. Built for ceremonies and statement dressing.',
   suits:
     'Sharp, structured Grandeur suiting with a clean natural shoulder and tailored trouser. Cut to carry confidence, end to end.',
   caps:
-    'A hand-finished Grandeur cap with a structured crown and refined finish — the perfect finishing touch for native and everyday looks.',
+    'A hand-finished Grandeur cap with a structured crown and refined finish, the perfect finishing touch for native and everyday looks.',
 }
 
 const KAFTAN_DETAILS = {

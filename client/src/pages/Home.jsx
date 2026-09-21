@@ -33,10 +33,10 @@ const HERO_SLIDES = [
 ]
 
 const STEPS = [
-  { icon: faEye, title: '01 — Browse', text: 'Explore Grandeur’s collections.' },
-  { icon: faShirt, title: '02 — Choose', text: 'Select your preferred design and size.' },
-  { icon: faCube, title: '03 — Order', text: 'Add your items and provide your details.' },
-  { icon: faStamp, title: '04 — Confirm', text: 'Receive confirmation of your order.' },
+  { icon: faEye, title: '01 Browse', text: 'Explore Grandeur’s collections.' },
+  { icon: faShirt, title: '02 Choose', text: 'Select your preferred design and size.' },
+  { icon: faCube, title: '03 Order', text: 'Add your items and provide your details.' },
+  { icon: faStamp, title: '04 Confirm', text: 'Receive confirmation of your order.' },
 ]
 
 const COLLECTION_CARDS = [
@@ -141,7 +141,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             Grandeur crafts refined kaftans, agbada, suits and native wear with obsessive attention
-            to detail — and trains the next generation of fashion designers and tailors.
+            to detail, and trains the next generation of fashion designers and tailors.
           </motion.p>
           <motion.div
             className="hero__actions"
@@ -203,7 +203,7 @@ export default function Home() {
                 <h2 className="section-title">Kaftan to Agbada. Crafted end to end.</h2>
                 <p className="section-lead">
                   From a simple elegant kaftan to a full kaftan + agbada statement set, every piece
-                  is engineered in layers — neckline, chest, pocket, sleeve, cuff, embroidery and
+                  is engineered in layers: neckline, chest, pocket, sleeve, cuff, embroidery and
                   fabric. This is Nigerian men&apos;s tailoring, done properly.
                 </p>
               </Reveal>
@@ -240,7 +240,7 @@ export default function Home() {
               themselves. Every seam is considered; every finish is measured.
             </p>
             <p>
-              Beyond the atelier, we train aspiring designers and tailors — teaching real garment
+              Beyond the atelier, we train aspiring designers and tailors, teaching real garment
               construction, pattern making and the disciplines behind premium men&apos;s fashion.
             </p>
             <Link to="/about" className="text-link">
@@ -341,7 +341,7 @@ export default function Home() {
               Become the tailor behind the outfits.
             </h2>
             <p>
-              Hands-on training in fashion design, pattern making, sewing and men&apos;s tailoring —
+              Hands-on training in fashion design, pattern making, sewing and men&apos;s tailoring,
               including dedicated kaftan and agbada construction.
             </p>
             <Link to="/training" className="btn btn--gold">

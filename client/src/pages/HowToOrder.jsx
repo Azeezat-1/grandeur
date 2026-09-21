@@ -11,7 +11,7 @@ const STEPS = [
     icon: faEye,
     num: '01',
     title: 'Browse',
-    text: 'Explore Grandeur’s collections — kaftans, agbada sets, suits and caps.',
+    text: 'Explore Grandeur’s collections, kaftans, agbada sets, suits and caps.',
     to: '/shop',
     cta: 'Browse the shop',
   },
@@ -47,7 +47,7 @@ export default function HowToOrder() {
       <PageHero
         eyebrow="How to Order"
         title="Four simple steps to your Grandeur pieces."
-        lead="From browsing the collections to confirming your order — here's exactly how it works."
+        lead="From browsing the collections to confirming your order, here's exactly how it works."
         image={HERO}
       />
 
