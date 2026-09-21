@@ -142,13 +142,15 @@
 
 /* Mobile menu */
 .mobile-menu {
-  position: absolute;
+  position: fixed;
   top: var(--header-h);
   left: 0;
   right: 0;
+  max-height: calc(100vh - var(--header-h));
+  overflow-y: auto;
   background: var(--g-black);
   color: var(--g-offwhite);
-  z-index: 190;
+  z-index: 210;
   border-bottom: 1px solid var(--g-line-light);
 }
 
