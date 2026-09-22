@@ -22,28 +22,15 @@
 }
 
 .brand {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
 }
 
-.brand-word {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  font-size: 1.875rem;
-  letter-spacing: -2px;
-  color: var(--g-black);
-}
-
-.brand-sub {
-  display: flex;
-  justify-content: flex-end;
-  font-style: oblique;
-  font-weight: 400;
-  margin-top: -10px;
-  letter-spacing: 7px;
-  font-size: 0.85rem;
-  color: var(--g-black);
+.brand-logo {
+  height: 44px;
+  width: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
 }
 
 .header-center ul {

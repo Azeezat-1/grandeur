@@ -29,8 +29,7 @@ export default function Header() {
           {/* LEFT — brand */}
           <div className="header-left">
             <Link to="/" className="brand" aria-label="Grandeur Tailors home">
-              <span className="brand-word">Grandeur</span>
-              <span className="brand-sub">Tailors</span>
+              <img src="/logo.png" alt="Grandeur Tailors" className="brand-logo" />
             </Link>
           </div>
 
