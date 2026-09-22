@@ -8,8 +8,8 @@
   position: sticky;
   top: 0;
   z-index: 200;
-  background: var(--g-black);
-  border-bottom: 1px solid var(--g-line-light);
+  background: #000;
+  border-bottom: 2px solid #faf506;
 }
 
 .header-inner {
