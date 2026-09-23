@@ -594,6 +594,16 @@
   text-transform: uppercase;
 }
 
+.collections-home .eyebrow,
+.collections-home .text-link,
+.collection-card__cta {
+  color: #f2cd60;
+}
+
+.collection-card__cta svg {
+  color: #f2cd60;
+}
+
 /* ============ COLLECTIONS SLIDING STRIP (home) ============ */
 
 .collections-strip {
