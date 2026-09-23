@@ -8,8 +8,10 @@
   position: sticky;
   top: 0;
   z-index: 200;
-  background: #000;
-  border-bottom: 2px solid #e6b31e;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e6b31e;
 }
 
 .header-inner {
@@ -26,9 +28,9 @@
 }
 
 .brand-logo {
-  height: 52px;
+  height: 56px;
   width: auto;
-  max-width: 220px;
+  max-width: 240px;
   object-fit: contain;
 }
 
