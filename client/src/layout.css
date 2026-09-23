@@ -2052,12 +2052,10 @@
   padding-bottom: 3rem;
 }
 
-.footer-logo {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.6rem;
-  letter-spacing: 0.28em;
-  color: var(--g-offwhite);
+.footer-logo-img {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
 }
 
 .footer-desc {

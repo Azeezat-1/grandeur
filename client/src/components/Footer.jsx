@@ -25,7 +25,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <p className="footer-logo">GRANDEUR</p>
+          <img src="/logo.jpg" alt="Grandeur Tailors" className="footer-logo-img" />
           <p className="footer-desc">
             Bespoke men&apos;s fashion and tailoring. Nigerian native wear, kaftans, agbada,
             suiting and craftsmanship built to detail.
