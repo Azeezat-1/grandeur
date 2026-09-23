@@ -69,11 +69,11 @@ export default function Footer() {
           <ul className="footer-contact">
             <li>
               <FontAwesomeIcon icon={faPhone} />
-              <a href="tel:+2348000000000">+234 800 000 0000</a>
+              <a href="tel:+2347080250212">+234 708 025 0212</a>
             </li>
             <li>
               <FontAwesomeIcon icon={faEnvelope} />
-              <a href="mailto:hello@grandeur.example">hello@grandeur.example</a>
+              <a href="mailto:info@grandeurtailors.com">info@grandeurtailors.com</a>
             </li>
             <li>
               <FontAwesomeIcon icon={faLocationDot} />

@@ -15,8 +15,8 @@ import Reveal from '../components/Reveal'
 const HERO = '/photos/caps/513079191_574242352423576_1914461248101949094_n.jpg'
 
 const CONTACT_PLACEHOLDERS = [
-  { icon: faPhone, label: 'Phone / WhatsApp', value: '+234 800 000 0000' },
-  { icon: faEnvelope, label: 'Email', value: 'hello@grandeur.example' },
+  { icon: faPhone, label: 'Phone / WhatsApp', value: '+234 708 025 0212' },
+  { icon: faEnvelope, label: 'Email', value: 'info@grandeurtailors.com' },
   { icon: faLocationDot, label: 'Location', value: 'Lagos, Nigeria' },
 ]
 
@@ -129,7 +129,7 @@ export default function Contact() {
                 </div>
                 <div className="field">
                   <label htmlFor="phone">Phone *</label>
-                  <input id="phone" name="phone" value={form.phone} onChange={setField} autoComplete="tel" placeholder="+234 800 000 0000" aria-invalid={!!errors.phone} />
+                  <input id="phone" name="phone" value={form.phone} onChange={setField} autoComplete="tel" placeholder="+234 708 025 0212" aria-invalid={!!errors.phone} />
                   {errors.phone && <span className="error-msg">{errors.phone}</span>}
                 </div>
               </div>

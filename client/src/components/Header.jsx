@@ -52,9 +52,9 @@ export default function Header() {
 
           {/* RIGHT — CTA + cart */}
           <div className="header-right">
-            <a href="tel:+2348000000000" className="header-cta">
+            <a href="tel:+2347080250212" className="header-cta">
               <FontAwesomeIcon icon={faPhone} />
-              <span>+234 800 000 0000</span>
+              <span>+234 708 025 0212</span>
             </a>
             <button
               className="cart-btn"
@@ -108,8 +108,8 @@ export default function Header() {
                   ))}
                 </ul>
               </nav>
-              <a href="tel:+2348000000000" className="mobile-cta">
-                <FontAwesomeIcon icon={faPhone} /> +234 800 000 0000
+              <a href="tel:+2347080250212" className="mobile-cta">
+                <FontAwesomeIcon icon={faPhone} /> +234 708 025 0212
               </a>
             </div>
           </motion.div>

@@ -19,7 +19,7 @@ export default function OrderConfirmation() {
           <Link to="/shop" className="btn btn--solid">
             Continue Shopping <FontAwesomeIcon icon={faArrowRight} />
           </Link>
-          <a href="tel:+2348000000000" className="btn btn--outline">
+          <a href="tel:+2347080250212" className="btn btn--outline">
             <FontAwesomeIcon icon={faPhone} /> Call Us
           </a>
         </div>

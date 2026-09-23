@@ -167,7 +167,7 @@ export default function Checkout() {
                     value={form.phone}
                     onChange={setField}
                     autoComplete="tel"
-                    placeholder="+234 800 000 0000"
+                    placeholder="+234 708 025 0212"
                     aria-invalid={!!errors.phone}
                   />
                   {errors.phone && <span className="error-msg">{errors.phone}</span>}
