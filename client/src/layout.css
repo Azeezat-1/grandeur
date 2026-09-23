@@ -2108,7 +2108,7 @@
 
 .footer-col a svg {
   font-size: 0.7rem;
-  color: var(--g-gold-dark);
+  color: #f2cd60;
 }
 
 .footer-contact li {
@@ -2120,7 +2120,7 @@
 }
 
 .footer-contact svg {
-  color: var(--g-gold-dark);
+  color: #f2cd60;
   width: 18px;
 }
 
