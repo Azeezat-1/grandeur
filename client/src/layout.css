@@ -2053,9 +2053,12 @@
 }
 
 .footer-logo-img {
-  width: 110px;
-  height: auto;
+  display: block;
+  width: 96px;
+  height: 96px;
   object-fit: contain;
+  margin-bottom: 1.2rem;
+  align-self: start;
 }
 
 .footer-desc {
