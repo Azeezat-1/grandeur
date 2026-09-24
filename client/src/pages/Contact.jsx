@@ -21,10 +21,10 @@ const CONTACT_PLACEHOLDERS = [
 ]
 
 const SOCIALS = [
-  { icon: faInstagram, label: 'Instagram', href: '#' },
-  { icon: faFacebookF, label: 'Facebook', href: '#' },
-  { icon: faXTwitter, label: 'X (Twitter)', href: '#' },
-  { icon: faWhatsapp, label: 'WhatsApp', href: '#' },
+  { icon: faInstagram, label: 'Instagram', href: 'https://www.instagram.com/grandeurtailors' },
+  { icon: faFacebookF, label: 'Facebook', href: 'https://web.facebook.com/p/Grandeur-Tailors-and-Clothiers-100095134473462/?_rdc=1&_rdr' },
+  { icon: faXTwitter, label: 'X (Twitter)', href: 'https://x.com/grandeurtailors' },
+  { icon: faWhatsapp, label: 'WhatsApp', href: 'https://wa.me/2347080250212' },
   { icon: faTiktok, label: 'TikTok', href: '#' },
 ]
 
